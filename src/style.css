@@ -1,6 +1,7 @@
 :root {
   --bg-color-dark: #0d171f;
   --text-color-dark: #f7f9fa;
+  --text-subtitle-dark: #f7f9fab9;
   --primary-color-dark: #69b6ff;
   --bg-primary-botton: #69b9ff1a;
 
@@ -24,7 +25,6 @@ body {
   line-height: 1.5;
   font-weight: 400;
   margin: 0 auto;
-
   min-height: 100vh;
   min-width: 100vh;
 }

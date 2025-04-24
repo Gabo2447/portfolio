@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/css-modules": "^1.0.5",
+    "@types/react": "^19.1.2",
     "standart": "^6.1.0",
     "vite": "^6.3.1"
   },

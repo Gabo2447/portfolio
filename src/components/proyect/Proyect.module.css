@@ -1,0 +1,142 @@
+* {
+  padding: 1rem;
+}
+
+.proyectSection {
+  margin-left: 5%;
+  font-size: 1.25em;
+}
+
+.section {
+  padding: 2rem;
+  background-color: rgba(105, 185, 255, 0.05);
+  border-radius: 20px;
+  color: var(--text-color-dark);
+}
+
+.sectionTitle {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-color-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: rgba(27, 67, 104, 0.102);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--primary-color-dark);
+}
+
+.sectionDiv {
+  padding: 1rem;
+}
+
+.h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-dark);
+}
+
+.p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-subtitle-dark);
+}
+
+.pTecnologies {
+  font-style: italic;
+  color: #71bdffa6;
+}
+
+.tecnologias {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tecnologiasDiv {
+  border: 0 solid;
+  border-radius: 35px;
+  background-color: var(--bg-primary-botton);
+  padding: 7px 8px;
+  display: flex;
+  place-content: center;
+  margin: 5px;
+}
+
+.tecnologiaIcono {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  border-radius: 2px;
+}
+
+.sectionGit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color-dark);
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.sectionGit:hover {
+  color: #fff;
+}
+
+.git {
+  width: 20px;
+  height: 20px;
+}
+
+.colorTransition {
+  transition: all 0.3s ease;
+}
+
+.title {
+  text-align: center as const;
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: .5rem;
+}
+
+.transition {
+  transition: all 0.400s linear 0;
+}
+
+.transition:hover {
+  transform: scale(1.05);
+}
+
+.colorTransition {
+  transition: all .4 linear 0;
+}
+
+.colorTransition:hover {
+  color: var(--primary-color-dark);
+}

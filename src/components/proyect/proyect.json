@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "titulo": "Proyecto 1",
+    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
+    "descripcion": "Descripción del proyecto 1",
+    "tecnologias": [
+      {
+        "nombre": "JavaScript",
+        "icono": "/assets/image/javascript.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      }
+    ],
+    "github_url": "https://github.com/Gabo2447/portfolio"
+  },
+  {
+    "id": "2",
+    "titulo": "Proyecto 2",
+    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
+    "descripcion": "Descripción del proyecto 2",
+    "tecnologias": [
+      {
+        "nombre": "React",
+        "icono": "/assets/image/react.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      }
+    ],
+    "github_url": "https://github.com/Gabo2447/portfolio"
+  },
+  {
+    "id": "3",
+    "titulo": "Proyecto 3",
+    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
+    "descripcion": "Descripción del proyecto 3",
+    "tecnologias": [
+      {
+        "nombre": "React",
+        "icono": "/assets/image/react.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      }
+    ],
+    "github_url": "https://github.com/Gabo2447/portfolio"
+  }
+]
