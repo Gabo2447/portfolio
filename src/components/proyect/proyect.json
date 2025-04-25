@@ -1,9 +1,9 @@
 [
   {
     "id": "1",
-    "titulo": "Proyecto 1",
-    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
-    "descripcion": "Descripción del proyecto 1",
+    "titulo": "Orange Cat",
+    "imagen": "/assets/pictures/Cat_Orange_Full_HD.webp",
+    "descripcion": "Bot de discord completo",
     "tecnologias": [
       {
         "nombre": "JavaScript",
@@ -12,15 +12,19 @@
       {
         "nombre": "Node.js",
         "icono": "/assets/image/nodejs.svg"
+      },
+      {
+        "nombre": "Discord.js",
+        "icono": "/assets/image/djs.svg"
       }
     ],
-    "github_url": "https://github.com/Gabo2447/portfolio"
+    "github_url": "https://github.com/Gabo2447/JS9OC"
   },
   {
     "id": "2",
-    "titulo": "Proyecto 2",
-    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
-    "descripcion": "Descripción del proyecto 2",
+    "titulo": "Todo App",
+    "imagen": "/assets/pictures/todoApp.webp",
+    "descripcion": "App sobre listas",
     "tecnologias": [
       {
         "nombre": "React",
@@ -29,9 +33,17 @@
       {
         "nombre": "Node.js",
         "icono": "/assets/image/nodejs.svg"
+      },
+      {
+        "nombre": "JavaScript",
+        "icono": "/assets/image/javascript.svg"
+      },
+      {
+        "nombre": "CSS3",
+        "icono": "/assets/image/css_old.svg"
       }
     ],
-    "github_url": "https://github.com/Gabo2447/portfolio"
+    "github_url": "https://github.com/Gabo2447/todoApp"
   },
   {
     "id": "3",
@@ -47,7 +59,68 @@
         "nombre": "Node.js",
         "icono": "/assets/image/nodejs.svg"
       }
+    ]
+  },
+  {
+    "id": "1",
+    "titulo": "Orange Cat",
+    "imagen": "/assets/pictures/Cat_Orange_Full_HD.webp",
+    "descripcion": "Bot de discord completo",
+    "tecnologias": [
+      {
+        "nombre": "JavaScript",
+        "icono": "/assets/image/javascript.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      },
+      {
+        "nombre": "Discord.js",
+        "icono": "/assets/image/djs.svg"
+      }
     ],
-    "github_url": "https://github.com/Gabo2447/portfolio"
+    "github_url": "https://github.com/Gabo2447/JS9OC"
+  },
+  {
+    "id": "2",
+    "titulo": "Todo App",
+    "imagen": "/assets/pictures/todoApp.webp",
+    "descripcion": "App sobre listas",
+    "tecnologias": [
+      {
+        "nombre": "React",
+        "icono": "/assets/image/react.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      },
+      {
+        "nombre": "JavaScript",
+        "icono": "/assets/image/javascript.svg"
+      },
+      {
+        "nombre": "CSS3",
+        "icono": "/assets/image/css_old.svg"
+      }
+    ],
+    "github_url": "https://github.com/Gabo2447/todoApp"
+  },
+  {
+    "id": "3",
+    "titulo": "Proyecto 3",
+    "imagen": "/assets/image/cpz24u4qqd8b1.webp",
+    "descripcion": "Descripción del proyecto 3",
+    "tecnologias": [
+      {
+        "nombre": "React",
+        "icono": "/assets/image/react.svg"
+      },
+      {
+        "nombre": "Node.js",
+        "icono": "/assets/image/nodejs.svg"
+      }
+    ]
   }
 ]
