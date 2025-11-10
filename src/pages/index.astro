@@ -1,13 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import About from "@/components/About.astro";
-import Education from "@/components/Education.astro";
-import Experience from "@/components/Experience.astro";
-import Hero from "@/components/Hero.astro";
-import Projects from "@/components/Projects.astro";
-import Skills from "@/components/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
+import About from "@/components/sections/About.astro";
+import Education from "@/components/sections/Education.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
 ---
 
 <Layout
@@ -15,7 +14,7 @@ import KeyboardManager from "@/components/KeyboardManager.astro";
   description="Portfolio web minimalista facil y sencillo para imprimir"
   favicon="/favicon.svg"
 >
-  <main>
+  <main class="p-16 mx-auto w-full">
     <Hero />
     <About />
     <Experience />
@@ -23,5 +22,4 @@ import KeyboardManager from "@/components/KeyboardManager.astro";
     <Projects />
     <Skills />
   </main>
-  <KeyboardManager />
 </Layout>
