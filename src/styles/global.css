@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+/* Reset/Normalize específico: Box-sizing y márgenes de tipografía */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+figure,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajustes de elementos específicos */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* * Bloque 2: Custom Base o Componentes globales
+* Usamos @layer base para ajustes finos de elementos HTML.
+*/
+@layer base {
+  /* Establecer la fuente monospace para todo el HTML (para un look de portfolio/código) */
+  html {
+    font-family: "Menlo", "Monaco", "Lucida Console", "Courier New", Courier,
+      monospace;
+  }
+
+  /* * Revertir la fuente de encabezados (si se desea una diferente a 'html') 
+  * Pero si quieres que sigan la fuente del sistema:
+  */
+  h1,
+  h2,
+  h3,
+  h4 {
+    /* Tailwind ya te da la fuente por defecto del sistema, así que esto es opcional */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  /* Aplicar estilos por defecto a 'p' usando apply, o simplemente dejarlo vacío si usas clases */
+  p {
+    @apply text-gray-500 text-sm leading-relaxed;
+    text-wrap: pretty;
+    /* La variable --color-gray-300 debe definirse en tu archivo de configuración de Tailwind */
+    /* Si no usas variables de CSS, usa directamente una clase de Tailwind, ej: @apply text-gray-600; */
+  }
+}
+
+/* * Bloque 3: Componentes Personalizados
+* Aquí se definen clases complejas que se usarán varias veces.
+*/
+@layer components {
+  /* El estilo de h1 se debe aplicar a las clases, no al elemento puro h1, 
+     a menos que lo hagas en @layer base. Lo movimos para clarificar. */
+
+  /* Componente de ícono de ancla */
+  .anclerIcon {
+    @apply text-gray-400 border border-neutral-200 p-1 size-8 rounded-md 
+           inline-flex items-center justify-center transition-all ease-in-out duration-200;
+
+    /* Sintaxis anidada para hover (¡Funciona gracias a PostCSS/Tailwind!) */
+    &:hover {
+      @apply bg-neutral-200 border-neutral-400;
+    }
+  }
+
+  /* La clase .print se define aquí, pero su uso es principalmente en @media print */
+  .print {
+    display: none !important;
+  }
+}
+
+/* * Bloque 4: Utilidades (Print media queries)
+* Esto se aplica mejor a nivel de utilidades, o simplemente fuera de las capas de Tailwind 
+* si no usas `@apply`.
+*/
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print {
+    display: block !important;
+  }
+
+  /* Ocultar la barra de desarrollo de Astro al imprimir */
+  astro-dev-toolbar {
+    display: none !important;
+  }
+
+  /* Asegurar que el contenido dentro de <article> no se corte en el salto de página */
+  article {
+    break-inside: avoid;
+  }
+}
