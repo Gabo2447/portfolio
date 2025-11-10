@@ -1,0 +1,52 @@
+---
+import Section from "@/components/Section.astro";
+import { projects } from "@cv";
+
+import GitHub from "@/icons/GitHub.astro";
+---
+
+<Section title="Projectos" className="no-print">
+  <ul class="grid grid-cols-3 gap-3">
+    {
+      projects.map(
+        ({ name, description, highlights, url, github, isActive }) => {
+          return (
+            <li class="border border-gray-200 rounded-lg p-3 h-full">
+              <section class="flex flex-col h-full">
+                <header class="flex items-center gap-x-2">
+                  <h3 class="hover:underline">
+                    <a href={url} target="_blank" type="noorefer noopener">
+                      {name}
+                    </a>
+                  </h3>
+                  {isActive ? (
+                    <div class="size-1 rounded-full bg-green-500 animate-ping" />
+                  ) : (
+                    <div class="size-1 rounded-full bg-red-500 animate-ping" />
+                  )}
+                  {github ? (
+                    <a href={github} target="_blank" type="noorefer noopener">
+                      <GitHub />
+                    </a>
+                  ) : null}
+                </header>
+                <main class="flex-1 mb-5">
+                  <p class="line-clamp-3">{description}</p>
+                </main>
+                <footer>
+                  <ul class="flex flex-col gap-y-2">
+                    {highlights.map((name) => (
+                      <li class="bg-gray-300/40 rounded-2xl w-fit text-[0.71rem] px-2 py-1 text-black line-clamp-1">
+                        {name}
+                      </li>
+                    ))}
+                  </ul>
+                </footer>
+              </section>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
+</Section>
