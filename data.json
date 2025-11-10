@@ -1,1 +1,248 @@
-{}
+{
+  "basics": {
+    "name": "Gabriel Alejandro De Olival Padron",
+    "label": "Full Stack Developer con más de 2 años de experiencia y ganas de seguir aprendiendo",
+    "image": "https://avatars.githubusercontent.com/u/145396831",
+    "email": "miduga@gmail.com",
+    "phone": "+34 688888888",
+    "url": "https://midu.dev",
+    "summary": "+2 años de experiencia como Desarrollador Web. Actualmente soy un autodicta aprendiendo y mejorando mis conocimientos con el backend. Vivo en Caracas, Venezuela.",
+    "location": {
+      "address": "",
+      "postalCode": "1020",
+      "city": "el paraiso",
+      "countryCode": "VE",
+      "region": "Venezuela"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "gabo2447",
+        "url": "https://linkedin.com/in/gabo2447"
+      },
+      {
+        "network": "Twitter",
+        "username": "gabo2447",
+        "url": "https://x.com/gabo2447"
+      },
+      {
+        "network": "GitHub",
+        "username": "gabo2447",
+        "url": "https://github.com/gabo2447"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "gabo2447",
+      "position": "Trainer/Junior Developer",
+      "url": "https://github.com/gabo2447",
+      "startDate": "2020-03-20",
+      "endDate": null,
+      "summary": "Aprendi diferentes tecnicas y metodos que me ayudaron a mejorar mi vida diaria optimizandola de diferentes maneras",
+      "highlights": ["Started in the programation"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Central de Venezuela",
+      "url": "https://www.ucv.ve/",
+      "area": "Ingeniero de Software",
+      "studyType": "Bachelor",
+      "startDate": "2028-01-01",
+      "endDate": "2032-01-01",
+      "score": "4.0",
+      "courses": ["POO C++"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Medium",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Master",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    },
+    {
+      "name": "Tailwind",
+      "level": "Avanzado",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Medium",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ]
+    },
+    {
+      "name": "Node",
+      "level": "Started",
+      "keywords": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+    },
+    {
+      "name": "MySQL",
+      "level": "Started",
+      "keywords": [
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Medium",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
+      ]
+    },
+    {
+      "name": "Next.js",
+      "level": "Started",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "React Framework",
+        "SSR",
+        "Static Generation"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Medium",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript Library", "UI"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "B2"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "mars.codes",
+      "isActive": true,
+      "description": "Historia interactiva con retos de programación para viajar a Marte",
+      "highlights": ["Elige tu propia aventura", "En desarrollo"],
+      "url": "https://mars.codes"
+    },
+    {
+      "name": "AdventJS",
+      "isActive": true,
+      "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
+      "highlights": [
+        "+1 millón de visitas",
+        "Multidioma",
+        "JavaScript & TypeScript"
+      ],
+      "url": "https://adventjs.dev"
+    },
+    {
+      "name": "Codember",
+      "isActive": true,
+      "description": "Juego interactivo de programación con retos y secretos",
+      "highlights": ["+2000 usuarios activos", "Retos para cualquier lenguaje"],
+      "url": "https://codember.dev"
+    },
+    {
+      "name": "codi.link",
+      "isActive": true,
+      "description": "Playground de código HTML, CSS y JavaScript para compartir",
+      "highlights": ["100k visitas al mes", "Desarrollado por la comunidad"],
+      "url": "https://codi.link",
+      "github": "https://github.com/midudev/codi.link"
+    },
+    {
+      "name": "Pruebas Técnicas",
+      "isActive": true,
+      "description": "Lista de pruebas técnicas de empresas para practicar programación",
+      "highlights": ["100% gratuito", "+500 soluciones de la comunidad"],
+      "url": "https://pruebastecnicas.com",
+      "github": "https://github.com/midudev/pruebas-tecnicas"
+    },
+    {
+      "name": "miduConf",
+      "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
+      "highlights": ["+15k tickets repartidos", "+50k espectadores en directo"],
+      "url": "https://miduconf.com"
+    }
+  ]
+}
