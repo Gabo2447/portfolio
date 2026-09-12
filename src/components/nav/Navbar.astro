@@ -1,0 +1,42 @@
+---
+import type { NavItems } from "./nav.type"
+import BurgueseMenu from "./BurgueseMenu.astro";
+import Title from "../common/Title.astro";
+import ButtonPrimary from "../common/button/ButtonPrimary.astro";
+
+const pathname = new URL(Astro.request.url).pathname;
+
+const navItems: NavItems = [
+	{ name: 'Inicio', href: '/' },
+	{ name: 'Acerca de mi', href: '/about-me' },
+	{ name: 'Proyectos', href: '/projects' },
+];
+---
+
+<header class="w-full flex justify-between items-center py-4.5 fixed max-w-360 bg-surface-bg px-responsive z-9999">
+	<Title Tag="h1"/>
+	<nav class="hidden md:block">
+		<ul class="flex gap-x-10 font-medium">
+			{
+        navItems.map((item) => {
+          const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+          const activeUnderline = isActive ? 'underline-active' : 'animated-underline';
+
+          return (
+            <li>
+              <a href={item.href} class={activeUnderline}>
+                {item.name}
+              </a>
+            </li>
+          );
+        })
+      }
+		</ul>
+	</nav>
+  <ButtonPrimary class="button-primary hidden md:flex" Tag="a" href="/contact-me">Contáctame</ButtonPrimary>
+
+  <!-- Mobile -->
+   <BurgueseMenu navItems={navItems} pathname={pathname} />
+</header>
+
+<div class="h-20"></div>

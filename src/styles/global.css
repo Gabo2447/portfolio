@@ -1,1 +1,69 @@
 @import "tailwindcss";
+@import '@fontsource-variable/dm-sans/wght.css';
+@import '@fontsource/poppins';
+
+@theme {
+  --font-sans: 'DM Sans Variable', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* Marca / Acción */
+  --color-primary: #47D16E;
+  --color-accent: #85BFD1;
+  --color-primary-hover: #3C40AE;
+
+  /* UI / Neutrales */
+  --color-surface-white: #FFFFFF;
+  --color-surface-card: #1C1E22;
+  --color-surface-border: #26292D;
+  --color-surface-bg: #171718;
+}
+
+@layer utilities {
+
+  .animated-underline,
+  .underline-active {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after,
+  .underline-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.2s ease-in-out;
+  }
+
+  .animated-underline::after {
+    width: 0;
+  }
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+
+  .underline-active::after {
+    width: 100%;
+  }
+}
+
+@utility px-responsive {
+  @apply px-5 min-[480px]:px-10 min-[992px]:px-37.5;
+}
+
+@utility underline-active {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+}

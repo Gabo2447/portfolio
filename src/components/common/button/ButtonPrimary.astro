@@ -1,0 +1,18 @@
+---
+
+import type { HTMLTag, HTMLAttributes } from 'astro/types';
+import { twMerge } from 'tailwind-merge';
+
+interface Props extends HTMLAttributes<any> {
+  Tag?: HTMLTag;
+}
+
+const { class: customClass, Tag = "button", ...restProps } = Astro.props;
+
+const defaultClasses = "inline-flex items-center justify-center gap-2.5 h-12 px-[30px] py-4 rounded-lg bg-primary font-medium cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-[2.5px] hover:opacity-80";
+const finalClasses = twMerge(defaultClasses, customClass);
+---
+
+<Tag class={finalClasses} {...restProps}>
+  <slot />
+</Tag>

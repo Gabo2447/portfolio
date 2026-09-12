@@ -1,0 +1,11 @@
+---
+import type { HTMLTag } from 'astro/types';
+
+interface Props {
+	Tag: HTMLTag;
+};
+
+const { Tag = 'h1' } = Astro.props;
+---
+
+<Tag class="cursor-default font-poppins font-semibold text-2xl leading-8">Gabriel</Tag>
