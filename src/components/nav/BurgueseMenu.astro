@@ -1,14 +1,12 @@
 ---
-import ButtonPrimary from "../common/button/ButtonPrimary.astro";
 import type { NavItems } from "./nav.type";
 import { Icon } from "astro-icon/components";
 
 interface Props {
 	navItems: NavItems;
-	pathname: string;
 }
 
-const { navItems, pathname } = Astro.props
+const { navItems } = Astro.props
 
 const modifiedNavItems: NavItems = [
 	...navItems,
