@@ -1,10 +1,7 @@
 @import "tailwindcss";
-@import '@fontsource-variable/dm-sans/wght.css';
-@import '@fontsource/poppins';
 
 @theme {
-  --font-sans: 'DM Sans Variable', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
+  --font-sans: var(--font-dm-sans), sans-serif;
 
   /* Marca / Acción */
   --color-primary: #47D16E;
@@ -16,10 +13,16 @@
   --color-surface-card: #1C1E22;
   --color-surface-border: #26292D;
   --color-surface-bg: #171718;
+
+  --border-surface-card: #1C1E22;
+  --border-surface-border: #26292D;
+}
+
+body {
+  font-family: var(--font-sans);
 }
 
 @layer utilities {
-
   .animated-underline,
   .underline-active {
     position: relative;
@@ -51,19 +54,4 @@
 
 @utility px-responsive {
   @apply px-5 min-[480px]:px-10 min-[992px]:px-37.5;
-}
-
-@utility underline-active {
-  position: relative;
-  display: inline-block;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-primary);
-  }
 }

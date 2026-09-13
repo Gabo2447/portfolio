@@ -1,6 +1,5 @@
 ---
 import "@/styles/global.css";
-
 import Navbar from "@/components/nav/Navbar.astro";
 
 const { title = "Main" } = Astro.props;
@@ -8,16 +7,16 @@ const { title = "Main" } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="flex justify-center bg-surface-bg text-surface-white">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="max-w-360 w-full m-auto min-h-scree flex flex-col items-center px-responsive">
-		<Navbar />
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="max-w-360 w-full m-auto min-h-screen flex flex-col items-center px-responsive pt-20">
+    <Navbar />
+    <slot />
+  </body>
 </html>
