@@ -1,5 +1,5 @@
 ---
-import type { NavItems } from "./nav.type"
+import type { NavItems } from "./nav.type";
 import BurgueseMenu from "./BurgueseMenu.astro";
 import Title from "../common/Title.astro";
 import ButtonPrimary from "../common/button/ButtonPrimary.astro";
@@ -9,21 +9,22 @@ import { pathIsActive } from "@/utils/getCurrentPath";
 const pathname = new URL(Astro.request.url).pathname;
 
 const navItems: NavItems = [
-	{ name: 'Inicio', href: '/' },
-	{ name: 'Acerca de mi', href: '/about-me' },
-	{ name: 'Proyectos', href: '/projects' },
+  { name: "Inicio", href: "/" },
+  { name: "Acerca de mi", href: "/about-me" },
+  { name: "Proyectos", href: "/projects" },
 ];
 ---
 
 <header class="w-full top-0 fixed bg-surface-bg z-9999">
-	<div class="max-w-360 mx-auto flex justify-between items-center py-4.5 px-responsive">
-  <Title Tag="h1"/>
-	<nav class="hidden md:block">
-		<ul class="flex gap-x-10 font-medium">
-			{
-        navItems.map((item) => {
+  <div class="max-w-360 mx-auto flex justify-between items-center py-4.5 px-responsive">
+    <Title Tag="h1" />
+    <nav class="hidden md:block">
+      <ul class="flex gap-x-10 font-medium">
+        {navItems.map((item) => {
           const isActive = pathIsActive(pathname, item.href);
-          const activeUnderline = isActive ? 'underline-active' : 'animated-underline';
+          const activeUnderline = isActive
+            ? "underline-active"
+            : "animated-underline";
 
           return (
             <li>
@@ -32,13 +33,18 @@ const navItems: NavItems = [
               </a>
             </li>
           );
-        })
-      }
-		</ul>
-	</nav>
-  <ButtonPrimary as="a" class="button-primary hidden md:flex" href="/contact-me">Contáctame</ButtonPrimary>
+        })}
+      </ul>
+    </nav>
+    <ButtonPrimary
+      as="a"
+      class="button-primary hidden md:flex"
+      href="/contact-me"
+    >
+      Contáctame
+    </ButtonPrimary>
 
-  <!-- Mobile -->
-   <BurgueseMenu navItems={navItems} />
-   </div>
+    <!-- Mobile -->
+    <BurgueseMenu navItems={navItems} />
+  </div>
 </header>

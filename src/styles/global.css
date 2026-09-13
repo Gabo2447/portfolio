@@ -4,19 +4,19 @@
   --font-sans: var(--font-dm-sans), sans-serif;
 
   /* Marca / Acción */
-  --color-primary: #47D16E;
-  --color-accent: #85BFD1;
-  --color-primary-hover: #3C40AE;
+  --color-primary: #47d16e;
+  --color-accent: #85bfd1;
+  --color-primary-hover: #3c40ae;
 
   /* UI / Neutrales */
-  --color-surface-white: #FFFFFF;
-  --color-surface-card: #1C1E22;
-  --color-surface-border: #26292D;
+  --color-surface-white: #ffffff;
+  --color-surface-card: #1c1e22;
+  --color-surface-border: #26292d;
   --color-surface-bg: #171718;
   --color-surface-footer: #131414;
 
-  --border-surface-card: #1C1E22;
-  --border-surface-border: #26292D;
+  --border-surface-card: #1c1e22;
+  --border-surface-border: #26292d;
 }
 
 html {
@@ -37,7 +37,7 @@ body {
 
   .animated-underline::after,
   .underline-active::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -4px;
     left: 0;

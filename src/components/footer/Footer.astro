@@ -5,45 +5,60 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="text-surface-white w-screen relative mt-10 bg-surface-footer">
-	<div class="max-w-360 mx-auto border-t border-surface-border">
-	<div class="flex flex-col items-center text-center gap-8 py-10 px-responsive md:flex-row md:items-start md:justify-between md:text-left">
-		
-		<!-- Logo -->
-		<Title Tag="span" />
+  <div class="max-w-360 mx-auto border-t border-surface-border">
+    <div class="flex flex-col items-center text-center gap-8 py-10 px-responsive md:flex-row md:items-start md:justify-between md:text-left">
+      <!-- Logo -->
+      <Title Tag="span" />
 
-		<!-- Start Zone -->
-		 <nav aria-label="Navegación principal" class="flex flex-col gap-y-5">
-			<span class="text-primary font-medium text-[1.125rem]">Inicio</span>
-			<ul class="flex flex-col gap-y-6 text-surface-white">
-				<li><a href="/about-me" class="animated-underline">Acerca de mí</a></li>
-				<li><a href="/projects" class="animated-underline">Proyectos</a></li>
-			</ul>
-		 </nav>
+      <!-- Start Zone -->
+      <nav aria-label="Navegación principal" class="flex flex-col gap-y-5">
+        <span class="text-primary font-medium text-[1.125rem]">Inicio</span>
+        <ul class="flex flex-col gap-y-6 text-surface-white">
+          <li>
+            <a href="/about-me" class="animated-underline">
+              Acerca de mí
+            </a>
+          </li>
+          <li>
+            <a href="/projects" class="animated-underline">
+              Proyectos
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-		 <!-- Contact Me Zone -->
-		 <nav aria-label="Contacto" class="flex flex-col gap-y-5">
-			<span class="text-primary font-medium text-[1.125rem]">Contáctame</span>
-			<ul class="flex flex-col gap-y-6 text-surface-white">
-				<li>
-          <a href="mailto:gabrieldeolival2@gmail.com" class="animated-underline">
-      	    Correo
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/gabo2447/" target="_blank" rel="noopener noreferrer" class="animated-underline">
-            LinkedIn
-          </a>
-        </li>
-			</ul>
-		</nav>
+      <!-- Contact Me Zone -->
+      <nav aria-label="Contacto" class="flex flex-col gap-y-5">
+        <span class="text-primary font-medium text-[1.125rem]">Contáctame</span>
+        <ul class="flex flex-col gap-y-6 text-surface-white">
+          <li>
+            <a
+              href="mailto:gabrieldeolival2@gmail.com"
+              class="animated-underline"
+            >
+              Correo
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/gabo2447/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="animated-underline"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-		<!-- Space -->
-		<div class="hidden md:block"></div>
-	</div>
+      <!-- Space -->
+      <div class="hidden md:block"></div>
+    </div>
 
-	<!-- Copyright -->
+    <!-- Copyright -->
     <div class="my-12 pt-6 px-responsive border-t border-surface-border text-center text-[0.875rem] text-surface-white/90 md:text-left">
       © {currentYear} Gabriel
     </div>
-		</div>
+  </div>
 </footer>

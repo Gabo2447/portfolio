@@ -1,16 +1,13 @@
 ---
-import type { HTMLTag, Polymorphic } from 'astro/types';
-import { twMerge } from 'tailwind-merge';
+import type { HTMLTag, Polymorphic } from "astro/types";
+import { twMerge } from "tailwind-merge";
 
-type Props<T extends HTMLTag = 'button'> = Polymorphic<{ as: T }>;
+type Props<T extends HTMLTag = "button"> = Polymorphic<{ as: T }>;
 
-const {
-  as: Tag = 'button',
-  class: customClass,
-  ...restProps
-} = Astro.props;
+const { as: Tag = "button", class: customClass, ...restProps } = Astro.props;
 
-const defaultClasses = "inline-flex items-center justify-center gap-2.5 h-12 px-[30px] py-4 rounded-lg bg-primary font-medium cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-[2.5px] hover:opacity-80";
+const defaultClasses =
+  "inline-flex items-center justify-center gap-2.5 h-12 px-[30px] py-4 rounded-lg bg-primary font-medium cursor-pointer transition-all duration-200 ease-in-out hover:-translate-y-[2.5px] hover:opacity-80";
 const finalClasses = twMerge(defaultClasses, customClass);
 ---
 

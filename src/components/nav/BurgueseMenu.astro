@@ -3,64 +3,68 @@ import type { NavItems } from "./nav.type";
 import { Icon } from "astro-icon/components";
 
 interface Props {
-	navItems: NavItems;
+  navItems: NavItems;
 }
 
-const { navItems } = Astro.props
+const { navItems } = Astro.props;
 
 const modifiedNavItems: NavItems = [
-	...navItems,
-	{
-		name: "Contáctame",
-		href: "/contact-me",
-	}
-]
+  ...navItems,
+  {
+    name: "Contáctame",
+    href: "/contact-me",
+  },
+];
 ---
 
-<button id="menu-toggle" class="md:hidden focus:outline-none p-1" aria-label="Menu">
+<button
+  id="menu-toggle"
+  class="md:hidden focus:outline-none p-1"
+  aria-label="Menu"
+>
+  <!-- Icon Open -->
+  <Icon id="icon-open" name="lucide:align-right" class="w-8 h-8 block" />
 
-	<!-- Icon Open -->
-	<Icon id="icon-open" name="lucide:align-right" class="w-8 h-8 block" />
-
-	<!-- Icon Close -->
-	<Icon id="icon-close" name="lucide:x" class="w-8 h-8 hidden" />
+  <!-- Icon Close -->
+  <Icon id="icon-close" name="lucide:x" class="w-8 h-8 hidden" />
 </button>
 
 <!-- Menu -->
-<div id="mobile-menu" class="hidden absolute top-full left-0 w-full h-dvh bg-surface-bg border-b border-surface-border px-responsive flex-col gap-y-4 md:hidden shadow-lg">
-	<nav>
-		<ul class="flex flex-col items-start gap-y-8 font-medium text-left">
-			{modifiedNavItems.map((item) =>
-					(
-						<li>
-							<a href={item.href} class={`animated-underline block py-1 text-xl font-normal`}>
-								{item.name}
-							</a>
-						</li>
-					)
-				)
-			}
-
-		</ul>
-	</nav>
+<div
+  id="mobile-menu"
+  class="hidden absolute top-full left-0 w-full h-dvh bg-surface-bg border-b border-surface-border px-responsive flex-col gap-y-4 md:hidden shadow-lg"
+>
+  <nav>
+    <ul class="flex flex-col items-start gap-y-8 font-medium text-left">
+      {modifiedNavItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class={`animated-underline block py-1 text-xl font-normal`}
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 </div>
 
-
 <script>
-	const toggleBtn = document.getElementById('menu-toggle');
-	const mobileMenu = document.getElementById('mobile-menu');
+  const toggleBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-	const iconOpen = document.getElementById('icon-open');
-	const iconClose = document.getElementById('icon-close');
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
 
-	toggleBtn?.addEventListener('click', () => {
-		mobileMenu?.classList.toggle('hidden');
-		mobileMenu?.classList.toggle('flex');
+  toggleBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
 
-		iconOpen?.classList.toggle('hidden');
-		iconOpen?.classList.toggle('block');
+    iconOpen?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("block");
 
-		iconClose?.classList.toggle('hidden');
-		iconClose?.classList.toggle('block');
-	});
+    iconClose?.classList.toggle("hidden");
+    iconClose?.classList.toggle("block");
+  });
 </script>
