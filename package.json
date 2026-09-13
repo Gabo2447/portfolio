@@ -22,6 +22,13 @@
     "esbuild": true
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.131"
+    "@iconify-json/lucide": "^1.2.131",
+    "eslint": "^10.10.0",
+    "eslint-plugin-astro": "^3.1.0",
+    "jiti": "^2.7.0",
+    "prettier": "3.9.6",
+    "prettier-plugin-astro": "1.0.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript-eslint": "^8.70.0"
   }
 }
