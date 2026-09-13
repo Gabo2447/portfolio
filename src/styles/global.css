@@ -13,9 +13,15 @@
   --color-surface-card: #1C1E22;
   --color-surface-border: #26292D;
   --color-surface-bg: #171718;
+  --color-surface-footer: #131414;
 
   --border-surface-card: #1C1E22;
   --border-surface-border: #26292D;
+}
+
+html {
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
 }
 
 body {
