@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/dm-sans':
-        specifier: ^5.3.0
-        version: 5.3.0
-      '@fontsource/poppins':
-        specifier: ^5.3.0
-        version: 5.3.0
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.3.0(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -366,12 +360,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource-variable/dm-sans@5.3.0':
-    resolution: {integrity: sha512-BpUG5bqePiDFMBM4ZtLSlPdAIOM990uB1dlXzIf4aw21yQR7BmykedLXXXMqGWsR18aMLOsbWccwJNh3ztTQaA==}
-
-  '@fontsource/poppins@5.3.0':
-    resolution: {integrity: sha512-cms1nM7U6SN8epIV1WMVOV8VsA645aSm3wHfzIQnkk188U341ThbJGSl2Sv54V29gnDbT2arMPfLzvVIIVCceQ==}
 
   '@iconify-json/lucide@1.2.131':
     resolution: {integrity: sha512-2h0kGA4utt2OIqTdDHPs7+ft0lK8fRRNx1ItsvUaIlkTKaNc/ADT3F9j2F18Qevm9sWfKlAghOUmxmP32inTPg==}
@@ -1898,10 +1886,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.2':
     optional: true
-
-  '@fontsource-variable/dm-sans@5.3.0': {}
-
-  '@fontsource/poppins@5.3.0': {}
 
   '@iconify-json/lucide@1.2.131':
     dependencies:
