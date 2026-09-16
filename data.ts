@@ -23,11 +23,11 @@ const nav: HeaderContent = {
 };
 
 const footer: FooterContent = {
-  start: [
+  inicio: [
     { title: "Acerca de mí", href: `${prefix}/about-me` },
     { title: "Proyectos", href: `${prefix}/projects` },
   ],
-  contact: [
+  contacto: [
     { title: "Correo", href: "mailto:gabrieldeolival2@gmail.com" },
     {
       title: "LinkedIn",
@@ -132,11 +132,6 @@ const error: ErrorContent = {
       name: "Volver al inicio",
       href: `${prefix}/`,
       variant: "default",
-    },
-    {
-      name: "Ver documentación",
-      variant: "secondary",
-      href: `${prefix}/docs`,
     },
   ],
 };

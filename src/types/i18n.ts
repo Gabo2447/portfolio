@@ -70,8 +70,7 @@ export interface HeaderContent {
 }
 
 export interface FooterContent {
-  start: Link[];
-  contact: Link[];
+  [key: string]: Link[];
 }
 
 export interface HomePageContent {
