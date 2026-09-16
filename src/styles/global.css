@@ -169,8 +169,43 @@ h5 {
   .underline-active::after {
     width: 100%;
   }
+
+  .input-saas {
+    @apply bg-input/20 border-input text-foreground rounded-md px-4 py-3 transition-all duration-200 ease-in-out outline-none;
+  }
+
+  .input-saas:focus {
+    @apply border-primary bg-input/40 -translate-y-0.5;
+    box-shadow:
+      0 0 0 3px oklch(from var(--primary) l c h / 20%),
+      0 4px 20px oklch(0 0 0 / 25%);
+  }
+
+  .btn-saas {
+    @apply bg-primary text-primary-foreground cursor-pointer rounded-md border-none px-6 py-3 font-semibold transition-all duration-200 ease-in-out;
+    box-shadow: 0 4px 14px oklch(from var(--primary) l c h / 30%);
+  }
+
+  .btn-saas:hover {
+    @apply -translate-y-0.5 brightness-110;
+    box-shadow: 0 6px 20px oklch(from var(--primary) l c h / 45%);
+  }
+
+  .btn-saas:active {
+    @apply translate-y-0 brightness-100;
+    box-shadow: 0 2px 8px oklch(from var(--primary) l c h / 20%);
+  }
 }
 
 @utility px-responsive {
   @apply px-5 min-[480px]:px-10 min-[992px]:px-37.5;
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

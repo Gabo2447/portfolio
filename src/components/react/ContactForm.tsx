@@ -63,8 +63,8 @@ export function ContactForm({
 
   return (
     <>
-      <Card className="w-full max-w-120">
-        <CardContent className="pt-6">
+      <Card className="bg-card/80 border-border/5 w-full max-w-120 backdrop-blur-md">
+        <CardContent className="">
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             {Object.entries(fields).map(([fieldName, field]) => (
               <div key={fieldName} className="grid gap-2">
@@ -77,8 +77,8 @@ export function ContactForm({
                     name={fieldName}
                     placeholder={field.placeholder}
                     required={field.required}
-                    rows={5} /* Define las 5 líneas de alto */
-                    className="resize-none" /* Opcional: evita que el usuario deforme el diseño */
+                    rows={5}
+                    className="input-saas resize-none"
                   />
                 ) : (
                   <Input
@@ -87,13 +87,14 @@ export function ContactForm({
                     placeholder={field.placeholder}
                     required={field.required}
                     type={field.type}
+                    className="input-saas"
                   />
                 )}
               </div>
             ))}
             <Button
               type="submit"
-              className="w-full"
+              className="btn-saas w-full"
               size="lg"
               disabled={isSubmitting}
             >
