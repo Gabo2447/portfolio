@@ -42,17 +42,25 @@ const contact: ContactContent = {
   description:
     "Si estás interesado en mi trabajo o tienes alguna inquietud, ¡no dudes en escribirme!",
   form: {
-    name: {
-      label: "Tu nombre",
-      placeholder: "Nombre",
-    },
-    email: {
-      label: "Tu E-mail",
-      placeholder: "ejemplo@email.com",
-    },
-    message: {
-      label: "Tu mensaje",
-      placeholder: "Hey...",
+    fields: {
+      name: {
+        label: "Tu nombre",
+        placeholder: "Nombre",
+        required: true,
+        type: "text",
+      },
+      email: {
+        label: "Tu E-mail",
+        placeholder: "ejemplo@email.com",
+        required: true,
+        type: "email",
+      },
+      message: {
+        label: "Tu mensaje",
+        placeholder: "Hey...",
+        required: true,
+        type: "textarea",
+      },
     },
     submitButton: "Enviar",
   },

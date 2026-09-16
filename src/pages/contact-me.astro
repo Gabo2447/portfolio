@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { ContactForm } from "@/components/react/ContactForm";
+import { ESLang } from "#/data";
+
+const t = ESLang;
+const BASE_URL = t.prefix;
+const navbar = t.navbar;
+const footer = t.footer;
+const contactSection = t.sections.contact;
+
+const PUBLIC_WEB3FORMS_KEY = "ddbb41e5-fb04-4b32-bbc9-27483363a5eb";
+---
+
+<Layout baseURL={BASE_URL} footer={footer} navbar={navbar}>
+  <section class="container min-h-[90vh] flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center text-center gap-y-6 mb-8">
+      <h2 class="text-5xl md:text-6xl font-bold text-chart-2">{contactSection.title}</h2>
+      <p class="max-w-150 text-foreground">{contactSection.description}</p>
+    </div>
+
+    <ContactForm
+      client:idle
+      fields={contactSection.form.fields}
+      submitButtonText={contactSection.form.submitButton}
+      web3FormsKey={PUBLIC_WEB3FORMS_KEY}
+    />
+  </section>
+</Layout>

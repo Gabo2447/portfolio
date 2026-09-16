@@ -37,7 +37,7 @@ const formattedBase = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
   <body class="min-h-screen flex flex-col justify-center">
     <BackgroundIcon />
     <Navbar content={navbar} />
-    <main class="flex-1 w-full max-w-360 mx-auto px-responsive flex flex-col items-center justify-center">
+    <main class="flex-1 w-full max-w-360 mx-auto px-responsive my-10 z-50 flex flex-col items-center justify-center">
       <slot />
     </main>
     <Footer content={footer} />

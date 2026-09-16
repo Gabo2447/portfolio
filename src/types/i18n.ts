@@ -4,6 +4,9 @@ export type ButtonVariant =
 export type LinkTarget =
   "_blank" | "_self" | "_parent" | "_top" | (string & {});
 
+export type InputType =
+  "text" | "email" | "password" | "number" | "tel" | "textarea";
+
 export interface Link {
   title: string;
   href: string;
@@ -21,14 +24,14 @@ export interface ButtonConfig {
 export interface FormFieldText {
   label: string;
   placeholder: string;
+  required: boolean;
+  type?: InputType;
 }
 
 export interface ContactFormText {
   title?: string;
-  name: FormFieldText;
-  email: FormFieldText;
-  message: FormFieldText;
   submitButton: string;
+  fields: Record<string, FormFieldText>;
 }
 
 export interface FeatureCard {
