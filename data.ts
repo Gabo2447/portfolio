@@ -9,7 +9,7 @@ import type {
   SiteTranslation,
 } from "@/types/i18n";
 
-const prefix = "";
+const prefix = import.meta.env.BASE_URL;
 
 const nav: HeaderContent = {
   buttonContact: "Contáctame",
