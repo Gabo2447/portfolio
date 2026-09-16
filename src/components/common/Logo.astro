@@ -1,0 +1,8 @@
+---
+import { Image } from "astro:assets";
+import logoBlack from "@/assets/logo-dark.svg";
+import logoWhite from "@/assets/logo-light.svg";
+---
+
+<Image src={logoBlack} alt="Logo" class="hidden dark:block h-10 w-auto" />
+<Image src={logoWhite} alt="Logo" class="block dark:hidden h-10 w-auto" />

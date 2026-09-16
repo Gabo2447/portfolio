@@ -1,48 +1,38 @@
 ---
-import type { NavItems } from "./nav.type";
+import type { Link } from "@/i18n/type";
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  navItems: NavItems;
+  content: Link[];
 }
 
-const { navItems } = Astro.props;
-
-const modifiedNavItems: NavItems = [
-  ...navItems,
-  {
-    name: "Contáctame",
-    href: "/contact-me",
-  },
-];
+const { content } = Astro.props;
 ---
 
+<!-- Botón Toggle (Se queda en el Header) -->
 <button
   id="menu-toggle"
-  class="md:hidden focus:outline-none p-1"
-  aria-label="Menu"
+  class="md:hidden focus:outline-none p-1 z-120 relative text-foreground"
+  aria-label="Toggle Menu"
 >
-  <!-- Icon Open -->
   <Icon id="icon-open" name="lucide:align-right" class="w-8 h-8 block" />
-
-  <!-- Icon Close -->
   <Icon id="icon-close" name="lucide:x" class="w-8 h-8 hidden" />
 </button>
 
-<!-- Menu -->
+<!-- Fullscreen Overlay (Anclado estricto al Viewport) -->
 <div
   id="mobile-menu"
-  class="hidden absolute top-full left-0 w-full h-dvh bg-surface-bg border-b border-surface-border px-responsive flex-col gap-y-4 md:hidden shadow-lg"
+  class="hidden fixed top-0 left-0 right-0 bottom-0 w-screen h-dvh bg-background/98 backdrop-blur-2xl z-110 flex-col pt-24 px-responsive md:hidden overflow-y-auto"
 >
-  <nav>
-    <ul class="flex flex-col items-start gap-y-8 font-medium text-left">
-      {modifiedNavItems.map((item) => (
-        <li>
+  <nav class="mt-4">
+    <ul class="flex flex-col items-start gap-y-6 font-medium text-left">
+      {content.map((item) => (
+        <li class="w-full">
           <a
             href={item.href}
-            class={`animated-underline block py-1 text-xl font-normal`}
+            class="mobile-nav-link animated-underline block py-2 text-2xl font-normal text-foreground"
           >
-            {item.name}
+            {item.title}
           </a>
         </li>
       ))}
@@ -51,20 +41,47 @@ const modifiedNavItems: NavItems = [
 </div>
 
 <script>
-  const toggleBtn = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
+  function setupMobileMenu() {
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("icon-open");
+    const iconClose = document.getElementById("icon-close");
+    const navLinks = document.querySelectorAll(".mobile-nav-link");
 
-  const iconOpen = document.getElementById("icon-open");
-  const iconClose = document.getElementById("icon-close");
+    if (!toggleBtn || !mobileMenu) return;
 
-  toggleBtn?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    mobileMenu?.classList.toggle("flex");
+    const toggleState = (open?: boolean) => {
+      const isCurrentlyHidden = mobileMenu.classList.contains("hidden");
+      const shouldOpen = open !== undefined ? open : isCurrentlyHidden;
 
-    iconOpen?.classList.toggle("hidden");
-    iconOpen?.classList.toggle("block");
+      if (shouldOpen) {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("flex");
+        iconOpen?.classList.replace("block", "hidden");
+        iconClose?.classList.replace("hidden", "block");
 
-    iconClose?.classList.toggle("hidden");
-    iconClose?.classList.toggle("block");
-  });
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        document.body.style.touchAction = "none";
+      } else {
+        mobileMenu.classList.remove("flex");
+        mobileMenu.classList.add("hidden");
+        iconOpen?.classList.replace("hidden", "block");
+        iconClose?.classList.replace("block", "hidden");
+
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+        document.body.style.touchAction = "";
+      }
+    };
+
+    toggleBtn.addEventListener("click", () => toggleState());
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => toggleState(false));
+    });
+  }
+
+  setupMobileMenu();
+  document.addEventListener("astro:page-load", setupMobileMenu);
 </script>

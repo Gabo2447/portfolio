@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+import { DynamicIcon } from "@/icons/Icon";
+---
+
+<button
+  id="menu-toggle"
+  class="md:hidden focus:outline-none p-1 text-foreground cursor-pointer relative z-130"
+  aria-label="Toggle Menu"
+>
+  <DynamicIcon id="icon-open" name="text-align-end" className="size-6" />
+  <DynamicIcon id="icon-close" name="x" className="size-6 hidden" />
+</button>

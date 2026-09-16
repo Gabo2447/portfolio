@@ -1,26 +1,42 @@
 ---
+import { Font } from "astro:assets";
 import "@/styles/global.css";
+
 import Navbar from "@/components/nav/Navbar.astro";
 import Footer from "@/components/footer/Footer.astro";
+import BackgroundIcon from "@/components/background/BackgroundIcon.astro";
 
-const { title = "Main" } = Astro.props;
+import type { HeaderContent, FooterContent } from "@/types/i18n";
+
+interface Props {
+  title?: string;
+  lang?: string;
+  navbar: HeaderContent;
+  footer: FooterContent;
+}
+
+const { title = "Main", lang = "en", navbar, footer } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="flex justify-center bg-surface-bg text-surface-white">
+<html lang={lang} class="flex justify-center text-surface-white dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Fonts -->
+    <Font cssVariable="--font-jetbrains-mono" preload />
+    <Font cssVariable="--font-instrument-sans" preload />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col justify-center pt-20">
-    <Navbar />
+  <body class="min-h-screen flex flex-col justify-center">
+    <BackgroundIcon />
+    <Navbar content={navbar} />
     <main class="flex-1 w-full max-w-360 mx-auto px-responsive flex flex-col items-center justify-center">
       <slot />
     </main>
-    <Footer />
+    <Footer content={footer} />
   </body>
 </html>

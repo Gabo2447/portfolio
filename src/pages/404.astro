@@ -1,77 +1,35 @@
 ---
-import ButtonPrimary from "@/components/common/button/ButtonPrimary.astro";
-import Layout from "../layouts/Layout.astro";
-import ButtonSecondary from "@/components/common/button/ButtonSecondary.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import { Button } from "@/components/ui/button";
+import { DynamicIcon } from "@/icons/Icon";
+import { ESLang } from "#/data";
+
+const t = ESLang;
+
+const navbar = t.navbar;
+const footer = t.footer;
+const errorPage = t.sections.errorPage;
 ---
 
-<Layout title="404 - Página no encontrada">
-  <section class="container min-h-[90vh] flex flex-col justify-center items-center">
-    <div class="error-code">404</div>
-    <h1 class="title">Página no encontrada</h1>
-    <p class="description">
-      El enlace que seguiste tal vez está roto o la página ha sido movida a otra
-      ubicación.
-    </p>
+<Layout title="404 - Not Found" navbar={navbar} footer={footer}>
+  <section class="container min-h-[90vh] flex flex-col justify-center items-center z-1">
+    <div class="text-[8rem] font-extrabold leading-none tracking-[-2px] mb-2 font-heading">{errorPage.code}</div>
+    <h1 class="text-[1.55rem] font-semibold font-heading mb-3">{errorPage.title}</h1>
+    <p class="text-muted-foreground leading-normal mb-8 max-w-140 text-center">{errorPage.description}</p>
 
-    <div class="actions">
-      <ButtonPrimary as="a" href="/" class="bg-primary/60">
-        Volver al inicio
-      </ButtonPrimary>
-      <ButtonSecondary as="a" href="/docs">
-        Ver documentación
-      </ButtonSecondary>
+    <div class="actions flex gap-4 justify-center flex-wrap">
+      {errorPage.buttons?.map((btn) => {
+        return (
+          <Button variant={btn.variant} size="lg" className="px-8">
+            <a href={btn.href} target={btn.target}>
+              <DynamicIcon client:load name={btn.icon} />
+              {btn.name}
+            </a>
+            {}
+          </Button>
+        );
+      })}
     </div>
   </section>
 </Layout>
-
-<style>
-  .container {
-    text-align: center;
-    max-width: 480px;
-    width: 100%;
-  }
-
-  .error-code {
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--accent-color);
-    letter-spacing: -2px;
-    margin-bottom: 0.5rem;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  .description {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
-  }
-
-  .actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 500;
-    text-decoration: none;
-    transition:
-      background 0.2s,
-      transform 0.1s;
-  }
-
-  .btn-primary {
-    background-color: var(--accent-color);
-    color: #ffffff;
-  }
-</style>

@@ -1,50 +1,68 @@
 ---
-import type { NavItems } from "./nav.type";
-import BurgueseMenu from "./BurgueseMenu.astro";
+// Components
+import BurgueseMenuOverlay from "./BurgueseMenuOverlay.astro";
+import BurgueseMenuButton from "./BurgueseMenuButton.astro";
 import Title from "../common/Title.astro";
-import ButtonPrimary from "../common/button/ButtonPrimary.astro";
 
+import { Button } from "@/components/ui/button";
+
+// utils
 import { pathIsActive } from "@/utils/getCurrentPath";
 
+// i18n
+import type { HeaderContent, Link } from "@/types/i18n";
+import { DynamicIcon } from "@/icons/Icon";
+
+interface Props {
+  content: HeaderContent;
+}
+
+const { content } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 
-const navItems: NavItems = [
-  { name: "Inicio", href: "/" },
-  { name: "Acerca de mi", href: "/about-me" },
-  { name: "Proyectos", href: "/projects" },
+const modifiesContent: Link[] = [
+  ...content.nav,
+  {
+    title: content.buttonContact,
+    href: content.buttonLink,
+  },
 ];
 ---
 
-<header class="w-full top-0 fixed bg-surface-bg z-9999">
-  <div class="max-w-360 mx-auto flex justify-between items-center py-4.5 px-responsive">
+<header class="sticky top-0 w-full bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm transition-all z-120">
+  <div class="max-w-360 mx-auto flex justify-between items-center py-4.5 px-responsive font-heading">
     <Title Tag="h1" />
+
+    <!-- Desktop Navigation -->
     <nav class="hidden md:block">
-      <ul class="flex gap-x-10 font-medium">
-        {navItems.map((item) => {
+      <ul class="flex gap-x-10 font-medium text-[18px]">
+        {content.nav.map((item) => {
           const isActive = pathIsActive(pathname, item.href);
-          const activeUnderline = isActive
-            ? "underline-active"
-            : "animated-underline";
+          const activeUnderline = isActive ? "underline-active" : "animated-underline";
 
           return (
             <li>
-              <a href={item.href} class={activeUnderline}>
-                {item.name}
+              <a href={item.href} class={`${activeUnderline}`}>
+                {item.title}
               </a>
             </li>
           );
         })}
       </ul>
     </nav>
-    <ButtonPrimary
-      as="a"
-      class="button-primary hidden md:flex"
-      href="/contact-me"
-    >
-      Contáctame
-    </ButtonPrimary>
+
+    <div class="hidden md:flex gap-x-4">
+      <Button size="lg">
+        <a href={content.buttonLink} class="flex gap-x-2 justify-center items-center text-sm font-mono">
+          <DynamicIcon name="mail" />
+          {content.buttonContact}
+        </a>
+      </Button>
+    </div>
 
     <!-- Mobile -->
-    <BurgueseMenu navItems={navItems} />
+    <BurgueseMenuButton />
   </div>
 </header>
+
+<BurgueseMenuOverlay content={modifiesContent} />

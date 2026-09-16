@@ -1,13 +1,17 @@
 ---
 import type { HTMLTag } from "astro/types";
+import Logo from "./Logo.astro";
 
 interface Props {
   Tag: HTMLTag;
+  textEnable?: boolean;
 }
 
-const { Tag = "h1" } = Astro.props;
+const { Tag = "h1", textEnable = false } = Astro.props;
+const canHide = textEnable ? "" : "md:block hidden";
 ---
 
-<Tag class="cursor-default font-poppins font-semibold text-2xl leading-8">
-  Gabriel
+<Tag class="cursor-default font-heading font-semibold text-2xl leading-8 flex gap-x-3 text-center items-center">
+  <Logo />
+  <span class={canHide}>Gabriel</span>
 </Tag>
