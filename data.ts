@@ -71,8 +71,8 @@ const home: HomePageContent = {
     title:
       "Soy <span class='text-chart-2'>Gabriel De Olival</span> <br /> Programador Backend",
     subtitle:
-      "Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot ",
-    type: "",
+      "Especializado en diseñar e implementar arquitecturas escalables, APIs REST robustas y optimización de bases de datos para aplicaciones de alto rendimiento.",
+    type: "hero-main",
     buttons: [
       {
         href: `${prefix}/projects`,
@@ -83,7 +83,7 @@ const home: HomePageContent = {
         icon: "book",
       },
       {
-        href: `${prefix}/download`,
+        href: `${prefix}/cv.pdf`,
         name: "Descargar CV",
         size: "lg",
         target: "_blank",
@@ -108,7 +108,7 @@ const home: HomePageContent = {
     ],
     githubUrl: "https://github.com/Gabo2447",
     linkedinUrl: "https://linkedin.com/in/Gabo2447",
-    cvUrl: "/cv.pdf",
+    cvUrl: `${prefix}/cv.pdf`,
   },
   skills: {
     title: "",
