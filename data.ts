@@ -68,17 +68,47 @@ const contact: ContactContent = {
 
 const home: HomePageContent = {
   hero: {
-    title: "",
-    subtitle: "",
+    title:
+      "Soy <span class='text-chart-2'>Gabriel De Olival</span> <br /> Programador Backend",
+    subtitle:
+      "Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot Yo soy groot ",
     type: "",
-    buttons: [],
+    buttons: [
+      {
+        href: `${prefix}/projects`,
+        name: "Ver proyectos",
+        size: "lg",
+        target: "_self",
+        variant: "default",
+        icon: "book",
+      },
+      {
+        href: `${prefix}/download`,
+        name: "Descargar CV",
+        size: "lg",
+        target: "_blank",
+        variant: "secondary",
+        icon: "download",
+      },
+    ],
   },
   about: {
-    title: "",
-    icon: "",
-    subtitle: "",
-    type: "",
-    buttons: [],
+    badge: "Backend Developer | Java & Spring Boot",
+    title: "Construyendo sistemas escalables y APIs robustas",
+    imageSrc: "",
+    description:
+      "Hola, soy Gabriel. Desarrollador enfocado en el diseño de arquitecturas backend, APIs RESTful y optimización de bases de datos. Me apasiona escribir código limpio, aplicar buenas prácticas (SOLID) y resolver problemas complejos en el lado del servidor.",
+    stack: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "Docker",
+      "Microservicios",
+      "Git",
+    ],
+    githubUrl: "https://github.com/Gabo2447",
+    linkedinUrl: "https://linkedin.com/in/Gabo2447",
+    cvUrl: "/cv.pdf",
   },
   skills: {
     title: "",
@@ -95,9 +125,10 @@ const home: HomePageContent = {
 const about: AboutContent = {
   hero: {
     title: "",
-    description: [],
-    icon: "",
-    topButton: "",
+    description: "",
+    badge: "",
+    imageSrc: "",
+    stack: [],
   },
   skills: {
     title: "",

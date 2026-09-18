@@ -1,5 +1,8 @@
-export type ButtonVariant =
-  "default" | "secondary" | "outline" | "ghost" | "destructive" | "link";
+import { type VariantProps } from "class-variance-authority";
+import { buttonVariants } from "@/components/ui/button";
+
+export type ButtonVariant = VariantProps<typeof buttonVariants>["variant"];
+export type ButtonSize = VariantProps<typeof buttonVariants>["size"];
 
 export type LinkTarget =
   "_blank" | "_self" | "_parent" | "_top" | (string & {});
@@ -19,6 +22,7 @@ export interface ButtonConfig {
   href: string;
   icon?: string;
   target?: LinkTarget;
+  size?: ButtonSize;
 }
 
 export interface FormFieldText {
@@ -76,6 +80,20 @@ export interface FooterContent {
   [key: string]: Link[];
 }
 
+export interface AboutSectionContent {
+  type?: string;
+  badge: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt?: string;
+  stack: string[];
+  githubUrl?: string;
+  linkedinUrl?: string;
+  cvUrl?: string;
+  buttons?: ButtonConfig[];
+}
+
 export interface HomePageContent {
   hero: {
     title: string;
@@ -83,13 +101,7 @@ export interface HomePageContent {
     type: string;
     buttons?: ButtonConfig[];
   };
-  about: {
-    title: string;
-    icon: string;
-    subtitle: string;
-    type: string;
-    buttons?: ButtonConfig[];
-  };
+  about: AboutSectionContent;
   skills: {
     title: string;
     cards: FeatureCard[];
@@ -103,12 +115,7 @@ export interface HomePageContent {
 }
 
 export interface AboutContent {
-  hero: {
-    title: string;
-    description: string[];
-    icon: string;
-    topButton: string;
-  };
+  hero: AboutSectionContent;
   skills: {
     title: string;
     cards: FeatureCard[];

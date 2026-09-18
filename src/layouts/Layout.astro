@@ -16,13 +16,13 @@ interface Props {
   baseURL: string;
 }
 
-const { title = "Main", lang = "en", navbar, footer, baseURL } = Astro.props;
+const { title = "Main", lang = "es", navbar, footer, baseURL } = Astro.props;
 
 const formattedBase = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
 ---
 
 <!doctype html>
-<html lang={lang} class="flex justify-center text-surface-white dark no-scrollbar">
+<html lang={lang} class="flex justify-center text-surface-white no-scrollbar">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -43,3 +43,21 @@ const formattedBase = baseURL.endsWith("/") ? baseURL : `${baseURL}/`;
     <Footer content={footer} />
   </body>
 </html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+</script>

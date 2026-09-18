@@ -1,0 +1,29 @@
+---
+import type { HomePageContent } from "@/types/i18n";
+import { Button } from "@/components/ui/button";
+import { DynamicIcon } from "@/components/icons/Icon";
+
+interface Props {
+  home: HomePageContent;
+}
+
+const { home } = Astro.props;
+const hero = home.hero;
+---
+
+<section class="flex flex-col gap-y-6 max-w-136 text-center justify-center my-40">
+  <h2 class="font-semibold text-3xl md:text-4xl lg:text-5xl">
+    <Fragment set:html={hero.title} />
+  </h2>
+  <p class="text-center text-muted-foreground">{hero.subtitle}</p>
+  <div class="flex flex-col gap-y-2 gap-x-4 min-[25rem]:flex-row min-[25rem]:justify-center">
+    {hero.buttons?.map((item) => (
+      <Button variant={item.variant} size={item.size}>
+        <a target={item.target} href={item.href} class="flex gap-x-3 items-center justify-center">
+          <DynamicIcon name={item.icon} />
+          {item.name}
+        </a>
+      </Button>
+    ))}
+  </div>
+</section>
